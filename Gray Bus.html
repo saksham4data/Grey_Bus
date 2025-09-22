@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gray Bus - India's Premium Bus Booking Platform</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="logo">
+            <i class="fas fa-bus logo-icon"></i>
+            Gray<span>Bus</span>
+        </div>
+        <nav class="nav-menu">
+            <div class="nav-item active"><i class="fas fa-home"></i> Home</div>
+            <div class="nav-item "><i class="fas fa-info-circle"></i> About Us</div>
+            <div class="nav-item"><i class="fas fa-history"></i> My Trackings</div>
+            <div class="nav-item"><i class="fas fa-phone"></i> Help</div>
+        </nav>
+        <button class="login-btn" id="loginBtn"><i class="fas fa-user"></i> Login / Sign Up</button>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>India's Safest & Most Reliable Bus Tracking Platform</h1>
+            <p>Travel with confidence - Track your bus online on GrayBus</p>
+        </div>
+        
+        <div class="search-container">
+            <div class="search-form">
+                <div class="input-group">
+                    <label for="from"><i class="fas fa-map-marker-alt"></i> From</label>
+                    <input type="text" id="from" placeholder="Leaving from (e.g., Delhi)" autocomplete="off">
+                </div>
+                <div class="input-group">
+                    <label for="to"><i class="fas fa-map-marker-alt"></i> To</label>
+                    <input type="text" id="to" placeholder="Going to (e.g., Jaipur)" autocomplete="off">
+                </div>
+                <div class="input-group">
+                    <label for="date"><i class="fas fa-calendar"></i> Date</label>
+                    <input type="date" id="date">
+                </div>
+                <button class="search-btn" id="searchBtn">
+                    <i class="fas fa-search"></i> Search Buses
+                </button>
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- Features Section -->
+    <section class="section features">
+        <h2 class="section-title">Why Travel With GrayBus?</h2>
+        <div class="features-grid">
+            <div class="feature-card fade-in" style="animation-delay: 0.1s;">
+                <div class="feature-icon"><i class="fas fa-bus"></i></div>
+                <h3>Access At Your Location</h3>
+                <p>Easy to access, 24/7 support at any place</p>
+            </div>
+            <div class="feature-card fade-in" style="animation-delay: 0.2s;">
+                <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+                <h3>Safe Travel Guaranteed</h3>
+                <p>Verified buses, trained drivers, and 24/7 support for your peace of mind</p>
+            </div>
+            <div class="feature-card fade-in" style="animation-delay: 0.3s;">
+                <div class="feature-icon"><i class="fas fa-tag"></i></div>
+                <h3>Genuine Information Assurance</h3>
+                <p>Get the genuine information about buses </p>
+            </div>
+            <div class="feature-card fade-in" style="animation-delay: 0.4s;">
+                <div class="feature-icon"><i class="fas fa-clock"></i></div>
+                <h3>Save Time </h3>
+                <p>Get rid of waiting for so long for the buses, manage your time</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Routes Section -->
+    <section class="section popular-routes">
+        <h2 class="section-title">Popular Bus Routes</h2>
+        <div class="routes-grid">
+            <div class="route-card slide-in-left" style="animation-delay: 0.1s;" onclick="setRoute('Delhi', 'Jaipur')">
+                <h3>Delhi → Jaipur</h3>
+                <p>Departure Time: 02:15 Pm
+                    Arrival Time: 07:45 Pm
+                </p>
+            </div>
+            <div class="route-card slide-in-left" style="animation-delay: 0.2s;" onclick="setRoute('Mumbai', 'Pune')">
+                <h3>Mumbai → Pune</h3>
+                <p>Departure time: 12:40 Am
+                    Arrival Time: 06:20 Am
+                </p>
+            </div>
+            <div class="route-card slide-in-left" style="animation-delay: 0.3s;" onclick="setRoute('Bangalore', 'Chennai')">
+                <h3>Bangalore → Chennai</h3>
+                <p>Departure time: 10:30 Am
+                    Arrival Time: 02:50 Pm</p>
+            </div>
+            <div class="route-card slide-in-left" style="animation-delay: 0.4s;" onclick="setRoute('Hyderabad', 'Bangalore')">
+                <h3>Hyderabad → Bangalore</h3>
+                <p>Departure time: 09:45 Am
+                    Arrival Time: 03:20 Pm</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bus Results Section (Initially hidden) -->
+    <section class="bus-results" id="busResults" style="display: none;">
+        <h2 class="section-title">Available Buses</h2>
+        <div class="bus-list" id="busList">
+            <!-- Bus cards will be added here by JavaScript -->
+        </div>
+    </section>
+
+    <!-- Login Modal -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <span class="close-modal" id="closeModal">&times;</span>
+            <h2 style="color: #2c3e50; margin-bottom: 25px; text-align: center;">Welcome to GrayBus</h2>
+            
+            <div class="modal-tabs">
+                <div class="tab active" data-tab="login"><i class="fas fa-sign-in-alt"></i> Login</div>
+                <div class="tab" data-tab="signup"><i class="fas fa-user-plus"></i> Sign Up</div>
+            </div>
+
+            <!-- Login Tab -->
+            <div class="tab-content active" id="loginTab">
+                <div class="form-group">
+                    <label for="loginType">Login Using</label>
+                    <select id="loginType" onchange="toggleLoginMethod()">
+                        <option value="phone">Phone Number</option>
+                        <option value="email">Email</option>
+                    </select>
+                </div>
+                
+                <div class="form-group" id="phoneLogin">
+                    <label for="loginPhone"><i class="fas fa-phone"></i> Phone Number</label>
+                    <input type="tel" id="loginPhone" placeholder="Enter your 10-digit phone number">
+                </div>
+                
+                <div class="form-group" id="emailLogin" style="display: none;">
+                    <label for="loginEmail"><i class="fas fa-envelope"></i> Email</label>
+                    <input type="email" id="loginEmail" placeholder="Enter your email address">
+                </div>
+                
+                <div class="form-group otp-input" id="loginOtpGroup">
+                    <label for="loginOtp"><i class="fas fa-key"></i> OTP</label>
+                    <input type="text" id="loginOtp" placeholder="Enter 6-digit OTP">
+                </div>
+                
+                <button class="otp-btn" id="loginOtpBtn" onclick="requestLoginOtp()">
+                    <i class="fas fa-paper-plane"></i> Send OTP
+                </button>
+                <button class="otp-btn" id="loginVerifyBtn" style="display: none;" onclick="verifyLoginOtp()">
+                    <i class="fas fa-check"></i> Verify OTP
+                </button>
+            </div>
+
+            <!-- Signup Tab -->
+            <div class="tab-content" id="signupTab">
+                <div class="form-group">
+                    <label for="signupName"><i class="fas fa-user"></i> Full Name</label>
+                    <input type="text" id="signupName" placeholder="Enter your full name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="signupType">Sign Up Using</label>
+                    <select id="signupType" onchange="toggleSignupMethod()">
+                        <option value="phone">Phone Number</option>
+                        <option value="email">Email</option>
+                    </select>
+                </div>
+                
+                <div class="form-group" id="phoneSignup">
+                    <label for="signupPhone"><i class="fas fa-phone"></i> Phone Number</label>
+                    <input type="tel" id="signupPhone" placeholder="Enter your 10-digit phone number">
+                </div>
+                
+                <div class="form-group" id="emailSignup" style="display: none;">
+                    <label for="signupEmail"><i class="fas fa-envelope"></i> Email</label>
+                    <input type="email" id="signupEmail" placeholder="Enter your email address">
+                </div>
+                
+                <div class="form-group otp-input" id="signupOtpGroup">
+                    <label for="signupOtp"><i class="fas fa-key"></i> OTP</label>
+                    <input type="text" id="signupOtp" placeholder="Enter 6-digit OTP">
+                </div>
+                
+                <button class="otp-btn" id="signupOtpBtn" onclick="requestSignupOtp()">
+                    <i class="fas fa-paper-plane"></i> Send OTP
+                </button>
+                <button class="otp-btn" id="signupVerifyBtn" style="display: none;" onclick="verifySignupOtp()">
+                    <i class="fas fa-check"></i> Verify OTP
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-section">
+                <h3>About GrayBus</h3>
+                <ul class="footer-links">
+                    <li><a href="#"><i class="fas fa-info-circle"></i> About Us</a></li>
+                    <li><a href="#"><i class="fas fa-briefcase"></i> Careers</a></li>
+                    <li><a href="#"><i class="fas fa-phone"></i> Contact Us</a></li>
+
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Information</h3>
+                <ul class="footer-links">
+                    <li><a href="#"><i class="fas fa-file-contract"></i> Terms & Conditions</a></li>
+                    <li><a href="#"><i class="fas fa-shield-alt"></i> Privacy Policy</a></li>
+                    <li><a href="#"><i class="fas fa-question-circle"></i> FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Global Sites</h3>
+                <ul class="footer-links">
+                    <li><a href="#"><i class="fas fa-globe-asia"></i> India</a></li>
+                    <li><a href="#"><i class="fas fa-globe-asia"></i> Singapore</a></li>
+                    <li><a href="#"><i class="fas fa-globe-asia"></i> Malaysia</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <ul class="footer-links">
+                    
+                    <li><a href="#"><i class="fab fa-instagram"></i> nitesh_negi0408  </a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i> dakshhh_026  </a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i> ansh_tiwari_777  </a></li>
+                    <li><a href="#"><i class="fab fa-linkedin"></i> www.linkedin.com/in/daksh-saxena-a26b0b333 </a></li>
+                    <li><a href="#"><i class="fab fa-linkedin"></i> www.linkedin.com/in/ansh-tiwari-68036432a </a></li>
+                    <li><a href="#"><i class="fab fa-linkedin"></i> www.linkedin.com/in/nitesh-negi-8b4993374 </a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            © 2025 GrayBus. All rights reserved. | Making travel safe and convenient for millions of Indians
+        </div>
+    </footer>
+
+    <script>
+        // Enhanced JavaScript with animations and clarity
+        
+        // Sample bus data
+        const busData = [
+            {
+                id: 1,
+                name: "Sharma Travels AC Sleeper (2+1)",
+                from: "Delhi",
+                to: "Jaipur",
+                departure: "22:00",
+                arrival: "05:00",
+                duration: "7h",
+                seats: 25,
+                price: 599,
+                type: "AC Sleeper",
+                amenities: ["AC", "Charging Point", "Blanket", "Water Bottle",
+
+🎨 **Generating images based on descriptions...**
+
+✅ **Images generated successfully! Here's your updated content:**
