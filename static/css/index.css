@@ -1,0 +1,287 @@
+.header { background: rgba(139, 69, 19, 0.9); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+.logo { display: flex; align-items: center; gap: 0.5rem; color: rgb(0, 0, 0); font-size: 1.5rem; font-weight: bold; }
+.logo i { font-size: 2rem; color: #fffcfc; } 
+.nav-menu { display: flex; list-style: none; gap: 2rem; align-items: center; } 
+.nav-menu a { color: white; text-decoration: none; padding: 0.5rem 1rem; border-radius: 5px; transition: background-color 0.3s; display: flex; align-items: center; gap: 0.5rem; } 
+.nav-menu a:hover { background-color: rgba(255, 255, 255, 0.1); } 
+.user-profile {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(6px);
+  background-color: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  position: relative;
+  background: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  width: 350px;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+  animation: fadeIn 0.3s ease;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 22px;
+  cursor: pointer;
+  color: #555;
+}
+
+.close-btn:hover {
+  color: #000;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* User Profile Icon */
+.user-profile {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.user-profile i {
+  font-size: 22px;
+  color: #333;
+}
+
+/* Dropdown Menu */
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 120%;   /* just below the icon */
+  right: 0;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  min-width: 150px;
+  z-index: 1000;
+}
+
+.dropdown a {
+  display: block;
+  padding: 10px 15px;
+  color: #333;
+  text-decoration: none;
+}
+
+.dropdown a:hover {
+  background: #f5f5f5;
+}
+
+/* Show dropdown when active */
+.user-profile.active .dropdown {
+  display: block;
+}
+
+/* Main container */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  
+}
+.calendarIcon {
+  font-size: 24px;
+  color: #ff8c00;
+  cursor: pointer;
+}
+/* Hero Section */
+.hero {
+    border-radius: 45px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background: #efb794;
+  width: 95%;
+  height: 100%;
+  margin: 35;
+  margin-left: 35px;
+  margin-top: 20px;
+}
+
+.hero-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  padding-left: 10px;
+}
+
+.hero-text p {
+  padding-left: 10px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.explore-btn {
+  padding: 10px 20px;
+  background: #ff5722;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  margin-left: 10px;
+}
+
+.search-form {
+  display: flex;
+  gap: 10px;
+}
+
+
+.search-input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 150px;
+  width: 200px;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.input-icon-wrapper input[type="date"]:focus {
+    box-shadow: 0 1px 12px #d28f4c50;}
+
+.search-btn {
+  padding: 10px 15px;
+  background: #000000;
+  color: white;
+  border: none;
+  border-radius: 100%;
+  cursor: pointer;
+  margin-left: 10px;
+  margin-top: 20px;
+}
+
+/* Image Collage */
+.image-collage { position: relative; width: 100%; height: 500px; }
+
+.travel-image {
+  width: 150px;
+  height: 120px;
+  background: #ddd;
+  border-radius: 8px;
+}
+.travel-image { position: absolute; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); transition: transform 0.3s; } .travel-image:hover { transform: scale(1.05); } .travel-image.img1 { top: 0; right: 0; width: 200px; height: 150px; background: url('https://images.unsplash.com/photo-1587474260584-136574528ed5?w=400') center/cover; } .travel-image.img2 { top: 100px; right: 150px; width: 180px; height: 120px; background: url('https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=400') center/cover; } .travel-image.img3 { top: 200px; right: 50px; width: 160px; height: 140px; background: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400') center/cover; } .travel-image.img4 { bottom: 50px; right: 100px; width: 190px; height: 130px; background: url('https://www.freepik.com/free-photos-vectors/bus-road') center/cover; } /* Mobile Responsiveness */ @media (max-width: 768px) { .header { flex-direction: column; gap: 1rem; padding: 1rem; } .nav-menu { flex-wrap: wrap; gap: 1rem; } .main-content { flex-direction: column; } .hero-text h1 { font-size: 2rem; } .search-form { flex-direction: column; } .right-section { height: 300px; } .image-collage { height: 250px; } .travel-image { width: 120px !important; height: 90px !important; } }
+
+/* Sections */
+.section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.underline {
+  width: 80px;
+  height: 3px;
+  background: #ff5722;
+  margin: 0 auto 30px;
+}
+
+/* Features */
+.features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.feature {
+  background: #fff;
+  border: 1px solid #eee;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.feature.light {
+  background: #f9f9f9;
+}
+
+.badge {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.calendar-icon{
+  margin-left: 20px;
+  margin-top: 25px;
+}
+/* Routes */
+.routes-section {
+  background: #ffe7d6;
+  border-top: 1px solid #f0e4db;
+  border-bottom: 1px solid #f0e4db;
+  margin-top: 10px;
+  
+}
+
+.routes {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.route {
+  background: #fff;
+  padding: 15px 20px;
+  border-radius: 8px;
+  border: 1px solid #eee;
+}
+
+/* Footer */
+footer {
+  background: #222;
+  color: #fff;
+  padding: 40px 20px;
+  margin-top: 5%;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer h4 {
+  margin-bottom: 0px;
+}
+
+.footer .list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer .list a {
+  color: #bbb;
+  text-decoration: none;
+}
+
+.footer .list a:hover {
+  color: #fff;
+}

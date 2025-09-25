@@ -1,0 +1,49 @@
+id,bus_number,name,route_start,route_end
+1,HR16A3504,UP Roadways Deluxe,Faizabad,Kurukshetra
+2,UP29B3646,Mahalaxmi Travels AC,Kurukshetra,Sonipat
+3,PR783060,PRTC Deluxe,Bathinda,Jalandhar
+4,DL76B2982,Himalaya Travels Deluxe,Hapur,Karnal
+5,UP79A8744,UP Roadways Deluxe,Karnal,Kanpur
+6,UP19B2604,Haryana Roadways Express,Faizabad,Patiala
+7,UP47A1958,Redbus AC,Hapur,Aligarh
+8,DL25C5033,Shatabdi Travels AC,Gurgaon,Bulandshahr
+9,PB19A8508,Haryana Roadways AC,Gurgaon,Aligarh
+10,UP955905,UPSRTC Express,New Delhi,Chandigarh
+11,HR106464,HRTC Deluxe,Meerut,Bathinda
+12,PB81B3532,DTC Deluxe,Bulandshahr,Saharanpur
+13,UP38A4164,Mahalaxmi Travels Volvo,Ludhiana,Chandigarh
+14,UP84B1626,Royal Safari Express,Bathinda,Panipat
+15,PB65A6409,NueGo AC,Bulandshahr,Hisar
+16,DL84C6279,NueGo Volvo,Hisar,Jalandhar
+17,PR406085,PRTC Deluxe,Kurukshetra,Rampur
+18,DL38A9486,DTC Volvo,Noida,Meerut
+19,DL30C8777,Punjab Roadways Volvo,Bulandshahr,Agra
+20,PR273471,PRTC Deluxe,Bareilly,Agra
+21,DL10B5892,Sharma Travels Volvo,Hisar,Kurukshetra
+22,HR60C1444,Redbus Express,Hapur,Amritsar
+23,PR931659,PRTC Express,Pathankot,Agra
+24,HR84A6111,Mahalaxmi Travels AC,Moradabad,New Delhi
+25,HR63B2729,Raj National Express Volvo,Hisar,Patiala
+26,PB41A5569,Royal Safari Volvo,Amritsar,New Delhi
+27,HR40C7658,NueGo Volvo,Gurgaon,Allahabad
+28,PB25C9779,NueGo Deluxe,New Delhi,Agra
+29,DL23A5658,Redbus Volvo,Sonipat,Mohali
+30,UP76B8381,Punjab Roadways Volvo,Bareilly,Gurgaon
+31,DL47A4792,Haryana Roadways Super Deluxe,Ludhiana,Kurukshetra
+32,DL25B5982,Mahalaxmi Travels Volvo,Faizabad,Chandigarh
+33,PB33C8141,Haryana Roadways Volvo,Gorakhpur,Bulandshahr
+34,DL75A9889,DTC Volvo,Meerut,Faridabad
+35,UP49C1224,Shatabdi Travels AC,Ghaziabad,Mohali
+36,DL53C5377,Royal Safari Express,Ghaziabad,Varanasi
+37,HR50C8749,Punjab Roadways Volvo,Amritsar,Gurgaon
+38,HR52C9742,Sharma Travels Volvo,Aligarh,Faizabad
+39,DL31C5906,DTC Express,Patiala,Gurgaon
+40,UP69C5161,Redbus Volvo,Agra,Lucknow
+41,DL48A7302,Royal Safari Volvo,Gorakhpur,Gurgaon
+42,UP87B4588,Mahalaxmi Travels Deluxe,Gurgaon,Lucknow
+43,PB53A8673,UP Roadways Express,Moradabad,Varanasi
+44,HR89C6374,UP Roadways AC,Bulandshahr,Bareilly
+45,DL68B9850,Redbus Volvo,Jalandhar,Kurukshetra
+46,HR94A1349,Haryana Roadways Express,Saharanpur,New Delhi
+47,UP453370,UPSRTC Deluxe,Rampur,Allahabad
+48,HR67C4629,Himalaya Travels AC,Kanpur,Gurgaon

@@ -1,0 +1,214 @@
+{%include 'header.html'%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Train Tracker UI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href= {static 'css/bus_results.css'}>
+</head>
+<body class="bg-gray-50 min-h-screen font-sans">
+    <div class="relative">
+        <div class="custom-curve h-64 px-6 py-8" style="background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);">
+            
+        </div>
+    </div>
+ 
+    <div class="max-w-6xl mx-auto px-6 -mt-32 relative z-10">
+        <div class="bg-white rounded-2xl shadow-lg p-6 mb-8">
+            <div class="flex items-center gap-3 mb-6">
+                <div class=" flex items-center justify-center">
+                        <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-.293.707L12 11.414V15a1 1 0 01-.293.707l-2 2A1 1 0 018 17v-5.586L3.293 6.707A1 1 0 013 6V4z"/>
+                    </svg>
+                </div>
+                <h2 class="text-xl font-semibold text-black-600">Bus Track</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Running Status</label>
+                    <label type="text" 
+                           class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">Volvo
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Start Day</label>
+                    <select class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <option>Start Day - Today</option>
+                        <option>Yesterday</option>
+                        <option>Tomorrow</option>
+                    </select>
+                </div>
+                <div>
+                    <button class="w-full bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors font-medium">
+                        Check Status
+                    </button>
+                </div>
+            </div>
+
+            <div class="border-t pt-4">
+                <div class="flex justify-between items-center mb-4">
+                    <div>
+                        <p class="font-semibold text-gray-900">12607 - Lalbagh SF Express Running Status</p>
+                        <p class="text-sm text-gray-600">Start Date 04-04-2025</p>
+                    </div>
+                    <button class="text-blue-600 hover:text-blue-700 font-medium">Change</button>
+                </div>
+            </div>
+        </div>
+
+         Status Grid 
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+             Status Timeline 
+            <div class="lg:col-span-2">
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+                     Header Tabs 
+                    <div class="flex border-b">
+                        <button class="flex-1 px-6 py-4 text-center font-medium text-white bg-blue-600">Arrival</button>
+                        <button class="flex-1 px-6 py-4 text-center font-medium text-white bg-blue-500">Station</button>
+                        <button class="flex-1 px-6 py-4 text-center font-medium text-white bg-blue-600">Departure</button>
+                    </div>
+
+                     Timeline Content 
+                    <div class="p-6">
+                        <div class="status-timeline">
+                             MAS Station 
+                            <div class="flex items-start gap-4 mb-8">
+                                <div class="flex-shrink-0">
+                                    <div class="status-dot completed">1</div>
+                                </div>
+                                <div class="flex-1 grid grid-cols-4 gap-4 items-center">
+                                    <div>
+                                        <p class="font-bold text-gray-900">MAS</p>
+                                        <div class="flex flex-col gap-1 mt-2">
+                                            <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded">15:30</span>
+                                            <span class="px-2 py-1 bg-green-100 text-green-800 text-xs rounded">15:32</span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <p class="font-semibold">MGR Chennai Central</p>
+                                        <p class="text-green-600 text-sm">On time</p>
+                                    </div>
+                                    <div class="flex flex-col gap-1">
+                                        <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded">15:32</span>
+                                        <span class="px-2 py-1 bg-green-100 text-green-800 text-xs rounded">15:32</span>
+                                    </div>
+                                    <div class="text-right">
+                                        <button class="text-blue-600 hover:text-blue-700 text-sm">See in between Stations ↓</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                             PER Station 
+                            <div class="flex items-start gap-4 mb-8">
+                                <div class="flex-shrink-0">
+                                    <div class="status-dot completed">2</div>
+                                </div>
+                                <div class="flex-1 grid grid-cols-4 gap-4 items-center">
+                                    <div>
+                                        <p class="font-bold text-gray-900">PER</p>
+                                        <div class="flex flex-col gap-1 mt-2">
+                                            <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded">15:43</span>
+                                            <span class="px-2 py-1 bg-red-100 text-red-800 text-xs rounded">15:53</span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <p class="font-semibold">Perambur</p>
+                                        <p class="text-orange-600 text-sm">6Kms | PF #2</p>
+                                        <p class="text-red-600 text-sm">Delay 10 mins</p>
+                                    </div>
+                                    <div class="flex flex-col gap-1">
+                                        <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded">15:55</span>
+                                        <span class="px-2 py-1 bg-red-100 text-red-800 text-xs rounded">15:57</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                             AJJ Station 
+                            <div class="flex items-start gap-4 mb-8">
+                                <div class="flex-shrink-0">
+                                    <div class="status-dot current">3</div>
+                                </div>
+                                <div class="flex-1 grid grid-cols-4 gap-4 items-center">
+                                    <div>
+                                        <p class="font-bold text-gray-900">AJJ</p>
+                                        <div class="flex flex-col gap-1 mt-2">
+                                            <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded">16:39</span>
+                                            <span class="px-2 py-1 bg-red-100 text-red-800 text-xs rounded">16:44</span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <p class="font-semibold">Arakkonam</p>
+                                        <p class="text-orange-600 text-sm">65Kms | PF #1</p>
+                                        <p class="text-red-600 text-sm">Delay 15 mins</p>
+                                    </div>
+                                    <div class="flex flex-col gap-1">
+                                        <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded">16:47</span>
+                                        <span class="px-2 py-1 bg-red-100 text-red-800 text-xs rounded">16:51</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                             SHU Station 
+                            <div class="flex items-start gap-4 mb-8">
+                                <div class="flex-shrink-0">
+                                    <div class="status-dot pending">4</div>
+                                </div>
+                                <div class="flex-1 grid grid-cols-4 gap-4 items-center">
+                                    <div>
+                                        <p class="font-bold text-gray-900">SHU</p>
+                                        <div class="flex flex-col gap-1 mt-2">
+                                            <span class="px-2 py-1 bg-gray-100 text-gray-800 text-xs rounded">16:54</span>
+                                            <span class="px-2 py-1 bg-red-100 text-red-800 text-xs rounded">17:19</span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <p class="font-semibold">Sholinghur</p>
+                                        <p class="text-orange-600 text-sm">90Kms | PF #1</p>
+                                        <p class="text-red-600 text-sm">Delay 5 mins</p>
+                                    </div>
+                                    <div class="flex flex-col gap-1">
+                                        <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded">17:56</span>
+                                        <span class="px-2 py-1 bg-red-100 text-red-800 text-xs rounded">17:21</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                             SBC Station 
+                            <div class="flex items-start gap-4">
+                                <div class="flex-shrink-0">
+                                    <div class="status-dot pending">5</div>
+                                </div>
+                                <div class="flex-1 grid grid-cols-4 gap-4 items-center">
+                                    <div>
+                                        <p class="font-bold text-gray-900">SBC</p>
+                                        <div class="flex flex-col gap-1 mt-2">
+                                            <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded">22:00</span>
+                                            <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded">22:00</span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <p class="font-semibold">KSR Bengaluru</p>
+                                        <p class="text-orange-600 text-sm">359Kms | PF #3</p>
+                                        <p class="text-green-600 text-sm">No Delay</p>
+                                    </div>
+                                    <div class="flex flex-col gap-1">
+                                        <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded">22:00</span>
+                                        <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded">22:00</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{%include 'footer.html'%}
+    <script>
+        // Simple interactivity for status checking
+        document.querySelector('button[type="button"]').addEventListener('click', function() {
+            alert('Checking train status...');
+        });
+    </script>
+</body>
+</html>

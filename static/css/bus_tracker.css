@@ -1,0 +1,52 @@
+:root {
+            --primary-blue: #f69e7b;
+            --secondary-blue: #f69e7b;
+            --light-blue: #E8F0FF;
+            --neutral-gray: #F5F7FA;
+            --dark-gray: #2D3748;
+        }
+        
+        .custom-curve {
+            clip-path: polygon(0 0, 100% 0, 85% 100%, 0 80%);
+        }
+        
+        .status-timeline {
+            position: relative;
+        }
+        
+        .status-timeline::before {
+            content: '';
+            position: absolute;
+            left: 12px;
+            top: 20px;
+            bottom: 20px;
+            width: 2px;
+            background: #E2E8F0;
+        }
+        
+        .status-dot {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 600;
+            color: white;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .status-dot.completed {
+            background: var(--primary-blue);
+        }
+        
+        .status-dot.current {
+            background: #10B981;
+        }
+        
+        .status-dot.pending {
+            background: #E5E7EB;
+            color: #9CA3AF;
+        }

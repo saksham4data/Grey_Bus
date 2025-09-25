@@ -1,0 +1,206 @@
+:root{
+      /* Theme (5 colors total) */
+      --brand: #ff8a3d;           /* primary orange */
+      --brand-deep: #d86a2a;      /* darker border/accents */
+      --accent: #ffd768;          /* yellow wedge */
+      --bg: #f3f5f9;              /* lighter page background */
+      --text: #5b5e66;            /* neutral text */
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body{
+      margin-top: 20px;
+      font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      
+      place-items: center;
+      padding: 10px;
+      margin-bottom: 50px;
+    }
+
+    .card{
+      position: relative;
+      width: 100%;
+      max-width: 1080px;
+      background: linear-gradient(180deg, #ffb266 0%, #ffa24f 30%, #ff9842 60%, #ff8a3d 100%);
+      border: 2px solid var(--brand-deep);
+      border-radius: 28px;
+      padding: 28px;
+      overflow: hidden;
+      box-shadow:
+        0 1px 0 rgba(0,0,0,.02),
+        0 10px 30px rgba(0, 0, 0, 0.15);
+    }
+    /* Top-right yellow wedge accent */
+    .card::before{
+      content: "";
+      position: absolute;
+      top: -10%;
+      right: -10%;
+      width: 60%;
+      height: 60%;
+      background: var(--accent);
+      opacity: .85;
+      clip-path: polygon(35% 0%, 100% 0%, 100% 100%, 65% 100%);
+      border-radius: 40px;
+      filter: saturate(105%);
+    }
+
+    .card-inner{
+      position: relative;
+      z-index: 1; /* above wedge */
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 28px;
+    }
+    @media (max-width: 900px){
+      .card-inner{ grid-template-columns: 1fr; }
+    }
+
+    .panel{
+      background: rgba(255,255,255,.35);
+      border: 1px solid rgba(0,0,0,.06);
+      border-radius: 20px;
+      padding: 20px;
+      backdrop-filter: blur(2px);
+    }
+
+    .sidebar{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 14px;
+    }
+
+    /* Oval Photo Holder */
+    .photo-box{
+      position: relative;
+      
+      width: 130px;
+      height: 130px; /* compact: ~half height */
+      border-radius: 100%; /* round */
+      background:
+        radial-gradient(120% 100% at 50% 0%, rgba(255,255,255,.45) 0%, rgba(255,255,255,.2) 60%, rgba(255,255,255,.12) 100%),
+        linear-gradient(180deg, rgba(255,255,255,.18), rgba(255,255,255,.06));
+      border: 2px solid var(--brand-deep);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.4),
+        inset 0 -8px 20px rgba(0,0,0,.06);
+      overflow: hidden;
+      display: grid;
+      place-items: center;
+    }
+    .photo-box .silhouette{
+      width: 64px;
+      height: 64px;
+      opacity: .22; /* almost transparent */
+      color: #000000;
+    }
+    .photo-box img.preview{
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: inherit;
+      display: none; /* hidden until a file is chosen */
+    }
+
+    .edit-photo{
+      margin-top: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #000000;
+      letter-spacing: .2px;
+      background: linear-gradient(90deg, var(--brand-deep), var(--brand));
+      border: 1px solid rgba(0,0,0,.05);
+      padding: 8px 14px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: filter .15s ease;
+      text-decoration: none;
+      user-select: none;
+    }
+    .edit-photo:hover{ filter: brightness(1.03); }
+    .edit-photo:active{ filter: brightness(.98); }
+
+    .title{
+      margin: 0 0 12px;
+      color: #000000;
+      font-weight: 600;
+      letter-spacing: .2px;
+    }
+
+    .form{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px 18px;
+    }
+    .form .full{ grid-column: 1 / -1; }
+
+    .field label{
+      display: block;
+      font-size: 12px;
+      opacity: .9;
+      margin-bottom: 6px;
+      color: #000000;
+      font-weight: 600;
+    }
+    .input{
+      width: 100%;
+      padding: 14px 16px;
+      background: #dcdcdc;
+      border: 1px solid rgba(0,0,0,.08);
+      border-radius: 16px;
+      outline: none;
+      color: #000000;
+      font-size: 14px;
+      transition: box-shadow .15s ease, background .2s ease;
+    }
+    .input:focus{
+      box-shadow: 0 0 0 3px rgba(216,106,42,.25);
+      background: #dedede;
+    }
+
+    .actions{
+      margin-top: 10px;
+      display: flex;
+      justify-content: flex-start;
+      gap: 12px;
+    }
+    .btn{
+      appearance: none;
+      border: none;
+      cursor: pointer;
+      padding: 14px 22px;
+      font-weight: 600;
+      letter-spacing: .3px;
+      border-radius: 999px;
+      color: #000000;
+      background: linear-gradient(180deg, #ff9560 0%, #ff8a3d 45%, #f1783a 100%);
+      border: 1px solid var(--brand-deep);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.28);
+      transition: transform .04s ease, filter .12s ease;
+    }
+    .btn:hover{ filter: brightness(1.03); }
+    .btn:active{ transform: translateY(1px); }
+
+    /* Tiny toast */
+    .toast{
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #1b1d20;
+      color: #ffffff;
+      padding: 10px 14px;
+      border-radius: 12px;
+      font-size: 13px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .2s ease;
+    }
+    .toast.show{ opacity: 1; }
